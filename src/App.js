@@ -1,12 +1,13 @@
-import React from "react";
+import React from 'react';
 import "./App.css";
+import  Home from './Home'
 
 function App() {
   return (
     <div className="App">
+      <Home/>
       <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
+        "NASA" Image of the day
       </p>
     </div>
   );
