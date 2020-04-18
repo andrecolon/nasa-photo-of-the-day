@@ -1,22 +1,31 @@
 import React from 'react'
-import { StyledCards } from 'styled-components'
+import { StyledCards, StyledContainer, StyledBG, StyledImg } from './styles/StyledCards'
+
 
 // Props are prpoerties you can pass from ourtside
-
 
 
 const NasaCard = (props) =>{
     //destructuring - is taking the object key values and displaying them out as props
     const { title, copyright, date, imageUrl, description} = props//Prperties to be used through out app
     return(
-        <div className="nasa-card">
+        <StyledBG>
+        <StyledContainer>
+            
+        <StyledCards className="nasa-card">
             <h1>{title}</h1>
-            <img src="imageUrl}" alt="{title}" />
+            <StyledImg className="potdImg" src={imageUrl} alt={title} />
             <p>{copyright}</p>
-            <p>{date}</p>
+                    <p>{date}</p>
             <p>{description}</p>
-        </div>
+        </StyledCards>
+                {/* <button onClick={() => setDate("2012-12-25")}>today</button> */}
+
+        </StyledContainer>
+        </StyledBG >
     )
 }
+
+
 
 export default NasaCard
