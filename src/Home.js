@@ -6,20 +6,17 @@ import axios from 'axios'
 //import Hook
 //import Axios from './components/hook/fetchData'
 
-function randomDate(start, end) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-}
 
-randomDate(new Date(2012, 0, 1), new Date())
+
 
 function Home() {
-    const [dataState, setDataState] = useState({});
+    const [dataState, setDataState] = useState('');
 
     useEffect(() => {
         const fetchNasaPotd = () =>
-            axios.get(`https://api.nasa.gov/planetary/apod?api_key=hRhUbTc3zZX0dBodair3uuRFyisuXZr8GwTgKQi2`)
+            axios.get(`https://api.nasa.gov/planetary/apod?api_key=hRhUbTc3zZX0dBodair3uuRFyisuXZr8GwTgKQi2&date=2020-04-15`)
             .then(response =>{
-                console.log(response.data);
+               // console.log(response.data);
                 setDataState(response.data);
         
                 })
@@ -29,8 +26,8 @@ function Home() {
                 
     fetchNasaPotd();
 
-},[])
-
+    }, [])
+//console.log(date)
 
 return (
     
@@ -41,7 +38,10 @@ return (
                 date={dataState.date}
             imageUrl={dataState.url}
             description={dataState.explanation}
+            
 />
+
+
     </StyledCards>
     
 )

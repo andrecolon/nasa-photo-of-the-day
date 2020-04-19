@@ -26,7 +26,7 @@ export const StyledCards = styled.div`
 h1 {
     position: relative;
     top: 100px;
-    color:blue;
+    color:white;
     z-index: 2;
 }
 
@@ -34,5 +34,14 @@ h1 {
 
 export const StyledImg = styled.img`
 max-width: 100%
-`
+`;
+
+export const StyledBtn = styled.button`
+padding: 20px;
+width: 10%;
+background-color: red;
+color: white;
+font-weight: 900;
+
+`;
 
